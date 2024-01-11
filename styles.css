@@ -1,0 +1,226 @@
+body {
+  background-color: #333634;
+  color: white;
+  font-size: 1em;
+}
+
+/* Styles for MainContainer */
+.main-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.expiration-container {
+  background-color: #424543;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 80%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.expiration-container h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: fit-content;  
+  margin: 20px auto 0 auto;  
+}
+
+.buttons-container button {
+  white-space: nowrap;
+  width: 80px;
+  text-align: center;
+}
+
+.ticker-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+
+/* Styles for TickerInput */
+input {
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+  background-color: transparent;
+  outline: none;
+  color: white;
+  font-size: 1em;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #C6F28F;
+  color: #1f2121;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+button:hover {
+  background-color: #a7cc79;
+}
+
+.fetch-data-btn {
+  margin: 5px;
+  width: 100px;
+  background-color: #6ebfb3;
+}
+
+.fetch-data-btn:hover {
+  background-color: #5da197;
+}
+
+.option-table-transition {
+  transition: opacity 0.5s, max-height 0.5s; 
+  opacity: 0; 
+  max-height: 0; 
+  overflow: hidden;
+}
+
+.option-table-visible {
+  opacity: 1; 
+  max-height: 500px;
+}
+
+/* Styles for OptionsTable */
+.table-container {
+  width: calc(100% - 20px);
+  padding-right: 20px;
+  overflow-y: auto;
+  max-height: 500px;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  text-align: left;
+  table-layout: auto;
+}
+
+/* Styles for div inside td */
+td > div {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center; /* Vertically centers the content */
+  min-height: 20px; /* Match your tr min-height if used */
+}
+
+.ticker-div {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Background colors for rows */
+tr:nth-child(odd) td > div {
+  background-color: #595C5A;
+}
+
+tr:nth-child(even) td > div {
+  background-color: transparent; 
+}
+
+/* Add border-radius for first and last td in a row */
+tr td:first-child > div {
+  border-radius: 4px 0 0 4px;
+}
+
+tr td:last-child > div {
+  border-radius: 0 4px 4px 0;
+}
+
+td {
+ /* Content breaks to the next line if needed */
+  vertical-align: top;
+  height: 20px;
+}
+
+td > div {
+  max-height: 20px; /* Same as the row height if you're using padding */
+  overflow: hidden; /* Hides any content that overflows the div's box */
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 600px) {
+  /* .buttons-container, */
+  .ticker-input-container,
+  .centered-container,
+  .expiration-container h2 {
+    flex-direction: column;
+    min-width: 200px;
+  }
+
+  .buttons-container button,
+  .fetch-data-btn {
+    margin-bottom: 10px; /* Space between buttons when stacked */
+    width: auto; /* Buttons stretch to fit container */
+  }
+
+  .fetch-data-btn {
+    margin-top: 15px;
+  }
+
+  .expiration-container {
+    width: 95%; /* Full width on smaller screens */
+    max-width: none; /* No maximum width on smaller screens */
+    margin: 20px 2.5%; /* Adjust margins to center the container */
+    padding: 20px; /* Consistent padding */
+  }
+
+  .table-container {
+    width: 100%; /* Full width within the expiration-container */
+    padding-right: 10px; /* Adjusted space for scrollbar on smaller screens */
+  }
+
+  table {
+    margin-top: 10px; /* Reduced top margin on smaller screens */
+  }
+
+  /* Adjust button sizes and other elements as needed for smaller screens */
+  .buttons-container button, .fetch-data-btn {
+    width: auto; /* Full width for buttons */
+    margin-bottom: 10px; /* Space between stacked buttons */
+  }
+}
+
+/* Spinner style - Customize as needed */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3vh; 
+}
+
+.clip-loader {
+  display: block;
+  margin: 20px auto;
+}
+
